@@ -1,0 +1,69 @@
+body {
+  font-family: Calibri, Arial;
+  color: #1A1A1A;
+}
+h1 {
+  font-size: 50px;
+  margin: 4px;
+  text-align: center;
+}
+h3 {
+  margin: 30px 0px 10px 47px;
+}
+.navbar {
+  text-align: right;
+}
+.navbar li {
+  display: inline-block;
+  padding: 10px;
+}
+.navbar a {
+  color: #202124;
+}
+.navbar a, .navbar a:active, .navbar a:hover, .navbar a:visited {
+  text-decoration: none;
+}
+.navbar a:active, .navbar a:hover {
+  text-decoration: underline;
+}
+.searchbar {
+  border-color: #787878;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+  margin-left: 23%;
+  padding: 15px;
+}
+.sb-sm {
+  border-radius: 5px;
+  display: block;
+  margin: 8px;
+  padding: 7px;
+  width: 500px;
+}
+.searchbutton {
+  background-color: #BBBBBF;
+  border-style: none;
+  margin: 11px 4px;
+  padding: 8px 16px;
+}
+.text-input-table {
+  margin: 15px 45px;
+}
+.text-input-table tr {
+  font-size: 12px;
+}
+.text-input-table tr td .searchbutton {
+  float: right;
+  background-color: #4D90FE;
+  color: #FFFFFF;
+}
+
+.searchbar:hover, .searchbar:focus, .sb-sm:hover, .sb-sm:focus, .searchbutton:hover {
+  box-shadow: 0 0 2px 2px #888888;
+  outline: none;
+}
