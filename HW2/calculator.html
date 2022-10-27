@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        
+        <script>  
+            function insert(num) {  
+                curr = document.getElementsByName("input-field")[0].value
+                if (curr == '0' && (num != '.' || num != '*' || num != '/' || num != '+' ||
+                                   num != '-' || num != '%')){
+                    document.getElementsByName("input-field")[0].value = num;
+                }
+                else {
+                    document.getElementsByName("input-field")[0].value = curr + num;  
+                }
+            }  
+            function degrees_to_radians(degrees)
+            {
+              var pi = Math.PI;
+              return degrees * (pi/180);
+            }
+            function equal(func) {  
+                var exp = document.getElementsByName("input-field")[0].value;  
+                if(exp) {
+                    result = eval(exp)
+                    radians = degrees_to_radians(result)
+                    if(func == "sin"){
+                        result = Math.sin(radians)
+                    }
+                    else if(func == "cos"){
+                        result = Math.cos(radians)
+                    }
+                    else if(func == "tan"){
+                        result = Math.tan(radians)
+                    }
+                    else if(func == "log"){
+                        result = Math.log10(result)
+                    }
+                    else if(func == "ln"){
+                        result = Math.log(result)
+                    }
+                    else if(func == "sqrt"){
+                        result = Math.sqrt(result)
+                    }
+                    document.getElementsByName("input-field")[0].value = result;
+                }  
+            } 
+        </script> 
+    </head>
+    
+    <body>
+        <table class="calculator">
+            <tr>
+                <td><input placeholder="0" type="text" class="input-field" name="input-field"></td>
+            </tr>
+            <tr class="button-row">
+                <td><button type="button" class="button-gray" value="Deg">Deg</button></td>
+                <td><button type="button" class="button-gray" value="!">x!</button></td>
+                <td><button type="button" class="button-gray" value="(">(</button></td>
+                <td><button type="button" class="button-gray" value=")">)</button></td>
+                <td><button type="button" class="button-gray" value="%" onclick="insert('%')">%</button></td>
+                <td><button type="button" class="button-gray" value="AC" onclick="document.getElementsByName('input-field')[0].value = '0'">AC</button></td>
+            </tr>
+           <tr class="button-row">
+                <td><button type="button" class="button-gray" value="sin" onclick="equal('sin')">sin</button></td>
+                <td><button type="button" class="button-gray" value="ln" onclick="equal('ln')">ln</button></td>
+                <td><button type="button" class="button-light-gray" value="7" onclick="insert(7)">7</button></td>
+                <td><button type="button" class="button-light-gray" value="8" onclick="insert(8)">8</button></td>
+                <td><button type="button" class="button-light-gray" value="9" onclick="insert(9)">9</button></td>
+                <td><button type="button" class="button-gray" value="/" onclick="insert('/')">&#247;</button></td>
+            </tr>
+            <tr class="button-row">
+                <td><button type="button" class="button-gray" value="cos" onclick="equal('cos')">cos</button></td>
+                <td><button type="button" class="button-gray" value="log" onclick="equal('log')">log</button></td>
+                <td><button type="button" class="button-light-gray" value="4" onclick="insert(4)">4</button></td>
+                <td><button type="button" class="button-light-gray" value="5" onclick="insert(5)">5</button></td>
+                <td><button type="button" class="button-light-gray" value="6" onclick="insert(6)">6</button></td>
+                <td><button type="button" class="button-gray" value="*" onclick="insert('*')">x</button></td>
+            </tr>
+            <tr class="button-row">
+                <td><button type="button" class="button-gray" value="tan" onclick="equal('tan')">tan</button></td>
+                <td><button type="button" class="button-gray" value="sqrt" onclick="equal('sqrt')">&#8730;</button></td>
+                <td><button type="button" class="button-light-gray" value="1" onclick="insert(1)">1</button></td>
+                <td><button type="button" class="button-light-gray" value="2" onclick="insert(2)">2</button></td>
+                <td><button type="button" class="button-light-gray" value="3" onclick="insert(3)">3</button></td>
+                <td><button type="button" class="button-gray" value="-" onclick="insert('-')">-</button></td>
+            </tr>
+            <tr class="button-row">
+                <td><button type="button" class="button-gray" value="exp">EXP</button></td>
+                <td><button type="button" class="button-gray" value="^">x<sup>y</sup></button></td>
+                <td><button type="button" class="button-light-gray" value="0" onclick="insert(0)">0</button></td>
+                <td><button type="button" class="button-light-gray" value="." onclick="insert('.')">.</button></td>
+                <td><button type="button" class="button-blue" value="=" onclick="equal()">=</button></td>
+                <td><button type="button" class="button-gray" value="+" onclick="insert('+')">+</button></td>
+            </tr>
+         </table>
+	</body>
+</html>
